@@ -1,7 +1,7 @@
 const nav_items = [
     {
         title: 'Home',
-        url: '#',
+        url: '/',
         cName: 'nav-links'
     },{
         title: 'Shop',
@@ -9,7 +9,7 @@ const nav_items = [
         cName: 'nav-links'
     },{
         title: 'Blog',
-        url: '#',
+        url: '/',
         cName: 'nav-links'
     }
 ]
