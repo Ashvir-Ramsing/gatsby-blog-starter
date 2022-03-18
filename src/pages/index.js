@@ -8,8 +8,6 @@ import { Container, Card } from "react-bootstrap"
 import { GatsbyImage, getSrc, StaticImage } from "gatsby-plugin-image"
 import { getImage } from "gatsby-plugin-image"
 
-// import Card from 'react-bootstrap/Card'
-
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -40,11 +38,9 @@ const BlogIndex = ({ data, location }) => {
                 <Container className="card-list" >
                   <Card>
                     <Link to={post.fields.slug} itemProp="url">
-                      {/* <GatsbyImage */}
-                      <StaticImage
+                      <GatsbyImage
                         class="card-image"
-                      // image={getImage(post.frontmatter.image)}
-                        src="../../content/blog/monitor/monitor.jpg"
+                        image={getImage(post.frontmatter.image)}
                         alt={post.frontmatter.title}
                       />
                     </Link>
@@ -93,7 +89,7 @@ export const pageQuery = graphql`
           title
           date(formatString: "MMMM DD, YYYY")
           image {
-            childrenImageSharp {
+            childImageSharp {
               gatsbyImageData(
                 placeholder: BLURRED
                 transformOptions: { cropFocus: CENTER }
@@ -106,5 +102,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-// https://www.youtube.com/watch?v=qvawKezSR8I
